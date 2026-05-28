@@ -9,21 +9,24 @@ const Projects = ({ id, isDarkMode }) => {
       description: 'A clean calculator interface with support for basic arithmetic operations and instant results. Built with HTML, CSS, and JavaScript for fast browser usage.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       color: 'from-blue-500 to-cyan-500',
-      image: '/images/calculatorimage.png'
+      image: '/images/calculatorimage.png',
+      repo: 'https://github.com/Silitu-Agalu/Simple-calculator-app'
     },
     {
       title: 'Weather App',
       description: 'A weather dashboard showing current conditions and forecasts. Built using HTML, CSS, and JavaScript for a lightweight web experience.',
       technologies: ['HTML', 'CSS', 'JavaScript'],
       color: 'from-purple-500 to-pink-500',
-      image: '/images/weatherimage.png'
+      image: '/images/weatherimage.png',
+      repo: 'https://github.com/Silitu-Agalu/Weather-App'
     },
     {
-      title: 'To-Do App',
-      description: 'A productive task management application with features like task categorization, reminders, and progress tracking. Helps users stay organized and focused on their goals.',
+      title: 'Local Technician Service System',
+      description: 'A local service management platform for booking technicians, tracking service requests, and managing on-site appointments. Built with React to streamline communication between customers and technicians.',
       technologies: ['React', 'CSS', 'JavaScript'],
       color: 'from-green-500 to-emerald-500',
-      image: '/images/todo.svg'
+      image: '/images/localTechimage.png',
+      repo: 'https://github.com/Silitu-Agalu/Local-Technician-Service-System'
     },
   ];
 
@@ -82,10 +85,22 @@ const Projects = ({ id, isDarkMode }) => {
                       <ExternalLink size={16} />
                       View
                     </button>
-                    <button className={`flex items-center gap-2 px-4 py-2 border rounded-lg font-medium transition-colors duration-300 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-800' : 'border-gray-300 text-lightText hover:bg-gray-100'}`}>
-                      <Github size={16} />
-                      Code
-                    </button>
+                    {project.repo ? (
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={`flex items-center gap-2 px-4 py-2 border rounded-lg font-medium transition-colors duration-300 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-800' : 'border-gray-300 text-lightText hover:bg-gray-100'}`}
+                      >
+                        <Github size={16} />
+                        Code
+                      </a>
+                    ) : (
+                      <button className={`flex items-center gap-2 px-4 py-2 border rounded-lg font-medium transition-colors duration-300 ${isDarkMode ? 'border-gray-600 text-gray-300 hover:bg-gray-800' : 'border-gray-300 text-lightText hover:bg-gray-100'}`}>
+                        <Github size={16} />
+                        Code
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
